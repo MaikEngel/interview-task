@@ -1,0 +1,43 @@
+<div class="content-wrapper d-flex flex-column align-items-center gap-24 mt-3">
+  <h2>TO-DO List</h2>
+
+  <input
+    class="form-control border-0 shadow"
+    type="text"
+    [(ngModel)]="newTask"
+    placeholder="Write your task here"
+  />
+  <button (click)="addTask()" class="btn btn-success">Add task</button>
+
+  <div class="w-100">
+    <h3>Not finished taskes</h3>
+    <ul class="list-group">
+      <li
+        class="list-group-item mb-1 rounded-0 border-0 shadow d-flex justify-content-between gap-8 w-100 "
+        *ngFor="let task of tasks"
+      >
+        <input type="checkbox" [(ngModel)]="task.completed" />
+        <span class="w-100 px-2" [class.completed]="task.completed">{{
+          task.title
+        }}</span>
+        <span (click)="deleteTask(task)" class="close">&times;</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="w-100">
+    <h3>Finished taskes</h3>
+    <ul class="list-group">
+      <li
+        class="list-group-item mb-1 rounded-0 border-0 shadow d-flex justify-content-between gap-8 w-100 "
+        *ngFor="let task of finishedTasks"
+      >
+        <input type="checkbox" [(ngModel)]="task.completed" />
+        <span class="w-100 px-2" [class.completed]="task.completed">{{
+          task.title
+        }}</span>
+        <span (click)="deleteTask(task)" class="close">&times;</span>
+      </li>
+    </ul>
+  </div>
+</div>
