@@ -6,19 +6,20 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { FormsModule } from '@angular/forms';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TodoListComponent
-  ],
+  declarations: [AppComponent, TodoListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

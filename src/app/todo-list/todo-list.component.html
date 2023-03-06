@@ -10,33 +10,45 @@
   <button (click)="addTask()" class="btn btn-success">Add task</button>
 
   <div class="w-100">
-    <h3>Not finished taskes</h3>
+    <h6>Not finished taskes</h6>
     <ul class="list-group">
       <li
-        class="list-group-item mb-1 rounded-0 border-0 shadow d-flex justify-content-between gap-8 w-100 "
+        class="list-group-item mb-1 rounded-0 border-0 shadow d-flex justify-content-between gap-8 w-100"
         *ngFor="let task of tasks"
       >
-        <input type="checkbox" [(ngModel)]="task.completed" />
+        <input
+          type="checkbox"
+          [(ngModel)]="task.completed"
+          (click)="tickOff(task)"
+        />
         <span class="w-100 px-2" [class.completed]="task.completed">{{
           task.title
         }}</span>
-        <span (click)="deleteTask(task)" class="close">&times;</span>
+        <span (click)="deleteTask(task, tasks)" class="close pointer"
+          >&times;</span
+        >
       </li>
     </ul>
   </div>
 
   <div class="w-100">
-    <h3>Finished taskes</h3>
+    <h6>Finished taskes</h6>
     <ul class="list-group">
       <li
-        class="list-group-item mb-1 rounded-0 border-0 shadow d-flex justify-content-between gap-8 w-100 "
+        class="list-group-item mb-1 rounded-0 border-0 shadow d-flex justify-content-between gap-8 w-100"
         *ngFor="let task of finishedTasks"
       >
-        <input type="checkbox" [(ngModel)]="task.completed" />
+        <input
+          type="checkbox"
+          [(ngModel)]="task.completed"
+          (click)="restoreTask(task)"
+        />
         <span class="w-100 px-2" [class.completed]="task.completed">{{
           task.title
         }}</span>
-        <span (click)="deleteTask(task)" class="close">&times;</span>
+        <span (click)="deleteTask(task, finishedTasks)" class="close pointer"
+          >&times;</span
+        >
       </li>
     </ul>
   </div>

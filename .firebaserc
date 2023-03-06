@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "todo-list-ff1e2": {
+      "hosting": {
+        "interview-task": [
+          "todo-list-ff1e2"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "todo-list-ff1e2"
+  }
+}

@@ -3,9 +3,10 @@
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
 
-/* Importing Bootstrap SCSS file. */
-@import "bootstrap/scss/bootstrap";
+@import "assets/styles/colors";
 
 @import "assets/styles/base";
 
 @import "assets/styles/helper";
+
+@import "assets/styles/tags";
