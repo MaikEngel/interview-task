@@ -3,10 +3,11 @@
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
 
+/* Importing custom color variables. */
 @import "assets/styles/colors";
 
+/* Importing base styles. */
 @import "assets/styles/base";
 
+/* Importing helper styles. */
 @import "assets/styles/helper";
-
-@import "assets/styles/tags";

@@ -1,0 +1,436 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>interview-task documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">interview-task documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li
+  >
+  Task</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/todo-list/todo-list.component.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Represents a task in the todo list.</p>
+
+            </p>
+
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#completed" 
+>
+                                            completed
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#title" 
+>
+                                            title
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="completed"></a>
+                                        <span class="name "><b>completed</b>
+                                            <a href="#completed">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>completed:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Whether the task is completed or not.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="title"></a>
+                                        <span class="name "><b>title</b>
+                                            <a href="#title">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>title:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>The title of the task.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Firestore, collection, getDoc } from &#x27;@angular/fire/firestore&#x27;;
+import { doc, setDoc } from &#x27;firebase/firestore&#x27;;
+
+/**
+ * Represents a task in the todo list.
+ */
+interface Task {
+  /**
+   * The title of the task.
+   */
+  title: string;
+  /**
+   * Whether the task is completed or not.
+   */
+  completed: boolean;
+}
+
+/**
+ * The TodoListComponent displays a list of tasks and allows the user to
+ * add, remove, and complete tasks.
+ */
+
+@Component({
+  selector: &#x27;app-todo-list&#x27;,
+  templateUrl: &#x27;./todo-list.component.html&#x27;,
+  styleUrls: [&#x27;./todo-list.component.scss&#x27;],
+})
+export class TodoListComponent implements OnInit {
+  constructor(public firestore: Firestore) {
+    const coll &#x3D; collection(this.firestore, &#x27;items&#x27;);
+  }
+
+  /**
+   * The list of tasks that are not yet completed.
+   */
+  tasks: Task[] &#x3D; [];
+
+  /**
+   * The list of tasks that have been completed.
+   */
+  finishedTasks: Task[] &#x3D; [];
+
+  /**
+   * The title of the new task that the user wants to add.
+   */
+  newTask: string &#x3D; &#x27;&#x27;;
+
+  /**
+   * Called when the component is initialized.
+   */
+  ngOnInit(): void {
+    this.downloadFirebase();
+  }
+
+  /**
+   * Adds a new task to the list of tasks.
+   */
+
+  addTask &#x3D; () &#x3D;&gt; {
+    if (this.newTask.trim().length &#x3D;&#x3D;&#x3D; 0) {
+      return;
+    }
+    // adds a new task to the list of tasks and sets the new task title to an empty string
+    this.tasks.push({ title: this.newTask, completed: false });
+    this.newTask &#x3D; &#x27;&#x27;;
+    // updates the tasks and finished tasks in Firestore
+    this.updateFirestore();
+  };
+
+  /**
+   * Add the task to finishedTasks and remove the current task from the list of tasks.
+   */
+
+  tickOff &#x3D; (task: Task) &#x3D;&gt; {
+    let i &#x3D; this.tasks.indexOf(task);
+    let finishedTaskTitle &#x3D; this.tasks[i].title;
+    // moves a task from the tasks list to the finishedTasks list
+    this.finishedTasks.push({ title: finishedTaskTitle, completed: true });
+    // removes the task from the tasks list
+    this.deleteTask(task, this.tasks);
+    // updates the tasks and finished tasks in Firestore
+    this.updateFirestore();
+  };
+
+    /**
+   * Add the task to tasks list and remove the current task from the list of fishedTasks.
+   */
+
+  restoreTask &#x3D; (task: Task) &#x3D;&gt; {
+    let i &#x3D; this.finishedTasks.indexOf(task);
+    let taskTitle &#x3D; this.finishedTasks[i].title;
+    // moves a task from the finishedTasks list to the tasks list
+    this.tasks.push({ title: taskTitle, completed: false });
+    // removes the task from the finishedTasks list
+    this.deleteTask(task, this.finishedTasks);
+    // updates the tasks and finished tasks in Firestore
+    this.updateFirestore();
+  };
+
+      /**
+   * Removes the current task from tasks or finishedTasks list.
+   */
+
+  deleteTask &#x3D; (task: Task, currentTask: any) &#x3D;&gt; {
+    let i &#x3D; currentTask.indexOf(task);
+    if (i &gt; -1) {
+      // removes a task from a given list
+      currentTask.splice(i, 1);
+    }
+    // updates the tasks and finished tasks in Firestore
+    this.updateFirestore();
+  };
+
+/**
+ * Fetches tasks and finished tasks from Firestore
+ */
+
+  downloadFirebase() {
+    this.downloadTasks();
+    this.downloadFinishedTasks();
+  }
+
+  /**
+   * Update the tasks and finished tasks in Firestore.
+   */
+  async updateFirestore() {
+    // Set the &#x27;tasks&#x27; collection in Firestore to the current list of tasks
+    await setDoc(doc(this.firestore, &#x27;todolist&#x27;, &#x27;tasks&#x27;), {
+      tasks: this.tasks,
+    });
+
+    // Set the &#x27;finishedTasks&#x27; collection in Firestore to the current list of finished tasks
+    await setDoc(doc(this.firestore, &#x27;todolist&#x27;, &#x27;finishedTasks&#x27;), {
+      finishedTasks: this.finishedTasks,
+    });
+  }
+
+  async downloadTasks() {
+    // Get a reference to the &#x27;tasks&#x27; document in the &#x27;todolist&#x27; collection
+    const tasksRef &#x3D; doc(this.firestore, &#x27;todolist&#x27;, &#x27;tasks&#x27;);
+    // Get the snapshot of the &#x27;tasks&#x27; document
+    const tasksSnap &#x3D; await getDoc(tasksRef);
+
+    if (tasksSnap.exists()) {
+      // If the &#x27;tasks&#x27; document exists, update the tasks array with the tasks data from Firestore
+      this.tasks &#x3D; tasksSnap.data()[&#x27;tasks&#x27;];
+    } else {
+      // If the &#x27;tasks&#x27; document does not exist, log an error message to the console
+      console.log(&#x27;No such document!&#x27;);
+    }
+  }
+
+  async downloadFinishedTasks() {
+    // Get a reference to the &#x27;finishedTasks&#x27; document in the &#x27;todolist&#x27; collection
+    const finishedTaskRef &#x3D; doc(this.firestore, &#x27;todolist&#x27;, &#x27;finishedTasks&#x27;);
+    // Get the snapshot of the &#x27;finishedTasks&#x27; document
+    const finishedTaskSnap &#x3D; await getDoc(finishedTaskRef);
+
+    if (finishedTaskSnap.exists()) {
+      // If the &#x27;finishedTasks&#x27; document exists, update the finishedTasks array with the finished tasks data from Firestore
+      this.finishedTasks &#x3D; finishedTaskSnap.data()[&#x27;finishedTasks&#x27;];
+    } else {
+      // If the &#x27;finishedTasks&#x27; document does not exist, log an error message to the console
+      console.log(&#x27;No such document!&#x27;);
+    }
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'Task.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
